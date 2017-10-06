@@ -1,6 +1,18 @@
 # 02_roots_and_optimization
 Homework 2 Comp Mech
+```Matlab
+w=10;
+x=30;
+y_0=30;
+func=@(T) (T/w)*cosh((w/T)*x)+y_0-(T/w)-35;
+xl=800;
+xu=1000;
+es=.00001;
+max=150;
+[rootf,eaf,iterf]=falsepos(func,xl,xu,es,max);
+[rootb,eab,iterb]=bisect(func,xl,xu,es,max);
 [rootms,eams,iterms]=mod_secant(func,xl,xu,es,max);
+T=rootf;
 x=(-10:50);
 y=(T/w)*cosh((w/T)*x)+y_0-(T/w);
 
